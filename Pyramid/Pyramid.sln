@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramid", "Pyramid\Pyramid.csproj", "{5C96A80F-3585-4E1D-8F4E-46226C10BF05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramid.Test", "Pyramid.Test\Pyramid.Test.csproj", "{D45DF8FB-823C-4CE4-B6E6-B4B7CBBBB3F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C96A80F-3585-4E1D-8F4E-46226C10BF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C96A80F-3585-4E1D-8F4E-46226C10BF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C96A80F-3585-4E1D-8F4E-46226C10BF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C96A80F-3585-4E1D-8F4E-46226C10BF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45DF8FB-823C-4CE4-B6E6-B4B7CBBBB3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45DF8FB-823C-4CE4-B6E6-B4B7CBBBB3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45DF8FB-823C-4CE4-B6E6-B4B7CBBBB3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45DF8FB-823C-4CE4-B6E6-B4B7CBBBB3F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A47BF68E-3EBE-4C04-AA2D-4DDC02608A9A}
+	EndGlobalSection
+EndGlobal
