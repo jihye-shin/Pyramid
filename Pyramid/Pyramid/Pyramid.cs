@@ -26,7 +26,7 @@ namespace Pyramid
             }
             else
             {
-                FindMaxSumAndPath_rec();
+                maxSum = FindMaxSum_rec(value);
                 return maxSum;
             }
         }
@@ -53,17 +53,20 @@ namespace Pyramid
         {
             if (!hasChildren())
             {
-                return this.value;
+                return valueInParent;
             }
             else
             {
-                int maxSumInChildren = Int32.MinValue;
+                var maxSumInChildren = Int32.MinValue;
                 foreach (var child in this.children)
                 {
-                    maxSumInChildren = Math.Max(maxSumInChildren, FindMaxSum_rec(child.value));
+                    if (valueInParent % 2 != child.value % 2)
+                    {
+                        maxSumInChildren = Math.Max(maxSumInChildren, child.FindMaxSum_rec(child.value));
+                    }
                 }
 
-                return this.value + maxSumInChildren;
+                return valueInParent + maxSumInChildren;
             }
         }
 
