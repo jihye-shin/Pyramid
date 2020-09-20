@@ -8,16 +8,29 @@ namespace Pyramid
     {
         private int value; // in C# private instance variables naming starts with _. _value
         private List<Pyramid> children;
-        // maybe I'll just use List<List<int>>...
 
-        public Pyramid(int value, List<Pyramid> children)
+        public Pyramid(int value)
         {
             this.value = value;
-            this.children = children;
+            this.children = null;
         }
         public int FindMaxSum()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Pyramid> GetChildren()
+        {
+            return children;
+        }
+        public void SetChildren(List<Pyramid> children)
+        {
+            this.children = children;
+        }
+
+        public int GetValue()
+        {
+            return value;
         }
     }
 }

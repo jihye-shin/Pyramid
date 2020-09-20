@@ -16,7 +16,7 @@ namespace Pyramid
         public Pyramid GetNewPyramid(string inputString)
         {
             var valuesInLines = StringToList(inputString);
-            PrintList(valuesInLines);
+            // PrintList(valuesInLines);
             var root = BuildPyramids(valuesInLines);
             return root;
         }
@@ -24,8 +24,44 @@ namespace Pyramid
         private Pyramid BuildPyramids(List<string[]> valuesInLines)
         {
             var pyramidsWithValues = BuildPyramidsWithValues(valuesInLines);
-            ConnectChildrens();
-            return root;
+            ConnectChildrens(pyramidsWithValues);
+            // PrintPyramids(pyramidsWithValues);
+            return pyramidsWithValues[0][0];
+        }
+
+        private void PrintPyramids(List<List<Pyramid>> pyramidsWithValues)
+        {
+            foreach (var line in pyramidsWithValues)
+            {
+                foreach (var p in line)
+                {
+                    var children = p.GetChildren();
+                    if (children != null)
+                    {
+                        foreach (var child in children)
+                        {
+                            Console.Write(child.GetValue() + " ");
+                        }
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private void ConnectChildrens(List<List<Pyramid>> pyramidsWithValues)
+        {
+            for (int row = 0; row < pyramidsWithValues.Count-1; row++)
+            {       
+                var line = pyramidsWithValues[row];
+                for (int col = 0; col < line.Count; col++)
+                {
+                    var children = new List<Pyramid>();
+                    children.Add(pyramidsWithValues[row + 1][col]);
+                    children.Add(pyramidsWithValues[row + 1][col + 1]);
+                    var currentPyramid = line[col];
+                    currentPyramid.SetChildren(children);
+                }
+            }
         }
 
         private List<List<Pyramid>> BuildPyramidsWithValues(List<string[]> valuesInLines)
@@ -36,9 +72,10 @@ namespace Pyramid
                 var pyramids = new List<Pyramid>();
                 foreach (var value in line)
                 {
-                    var p = new Pyramid(Int32.Parse(value), null);
+                    var p = new Pyramid(Int32.Parse(value));
                     pyramids.Add(p);
                 }
+                pyramidsWithValues.Add(pyramids);
             }
 
             return pyramidsWithValues;
