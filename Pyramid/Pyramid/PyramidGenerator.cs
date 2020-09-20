@@ -8,44 +8,18 @@ namespace Pyramid
     {
         // TODO: make test class for PyramidGenerator
 
-        static void Main(string[] args)
-        {
-            var p = new PyramidGenerator();
-            p.GetNewPyramid("0\n8 9\n2 4 9\n4 5 2 3");
-        }
         public Pyramid GetNewPyramid(string inputString)
         {
             var valuesInLines = StringToList(inputString);
-            // PrintList(valuesInLines);
             var root = BuildPyramids(valuesInLines);
             return root;
         }
 
         private Pyramid BuildPyramids(List<string[]> valuesInLines)
         {
-            var pyramidsWithValues = BuildPyramidsWithValues(valuesInLines);
+            var pyramidsWithValues = BuildPyramidsWithValues(valuesInLines); // Instantiate pyramid objects only with values first, to prevent having 2 pyramid instances for a same value.
             ConnectChildrens(pyramidsWithValues);
-            // PrintPyramids(pyramidsWithValues);
             return pyramidsWithValues[0][0];
-        }
-
-        private void PrintPyramids(List<List<Pyramid>> pyramidsWithValues)
-        {
-            foreach (var line in pyramidsWithValues)
-            {
-                foreach (var p in line)
-                {
-                    var children = p.GetChildren();
-                    if (children != null)
-                    {
-                        foreach (var child in children)
-                        {
-                            Console.Write(child.GetValue() + " ");
-                        }
-                    }
-                }
-                Console.WriteLine();
-            }
         }
 
         private void ConnectChildrens(List<List<Pyramid>> pyramidsWithValues)
@@ -92,19 +66,6 @@ namespace Pyramid
             }
 
             return valuesInLines;
-        }
-
-        private void PrintList(List<string[]> list)
-        {
-            foreach (var v in list)
-            {
-                foreach (var s in v)
-                {
-                    Console.Write(s.ToString() + " ");
-
-                }
-                Console.WriteLine();
-            }
         }
     }
 }

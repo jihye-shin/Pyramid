@@ -6,7 +6,7 @@ namespace Pyramid
 {
     public class Pyramid
     {
-        private int value; // in C# private instance variables naming starts with _. _value
+        private int value;
         private List<Pyramid> children;
         private int maxSum;
         private List<int> maxPath;
@@ -18,6 +18,7 @@ namespace Pyramid
             this.maxSum = Int32.MinValue;
             this.maxPath = null;
         }
+
         public int GetMaxSum()
         {
             if (maxSum != Int32.MinValue)
@@ -31,7 +32,7 @@ namespace Pyramid
             }
         }
 
-        public List<int> GetMaxPath() // Should it be List<int> or List<Pyramid>?
+        public List<int> GetMaxPath() // Should it return List<int> or List<Pyramid>?
         {
             if (maxPath != null)
             {

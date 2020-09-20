@@ -7,12 +7,10 @@ using Xunit;
 namespace Pyramid.Test
 {
     public class PyramidTest
-    {   // TODO: implement tests for GetMaxPath()
-
+    {
         [Fact]
         public void GIVEN_1Pyramid_WHEN_GetMaxSum_THEN_GiveValueInPyramid()
         {
-            // input: 1
             var pg = new PyramidGenerator();
             var pyramid = pg.GetNewPyramid("1");
             var maxSum = pyramid.GetMaxSum();
@@ -24,7 +22,6 @@ namespace Pyramid.Test
         [Fact]
         public void GIVEN_2PathWithEqualSum_WHEN_GetMaxSum_THEN_GiveSumFrom1stPath()
         {
-            // input: 1\n8 9\n1 5 9\n6 5 2 3
             var pg = new PyramidGenerator();
             var pyramid = pg.GetNewPyramid("1\n8 9\n1 5 9\n6 5 2 3");
             var maxSum = pyramid.GetMaxSum();
@@ -36,7 +33,6 @@ namespace Pyramid.Test
         [Fact]
         public void GIVEN_OddValueInRoot_WHEN_GetMaxSum_THEN_GiveMaxSum()
         {
-            // input: 1\n8 9\n1 5 9\n4 5 2 3
             var pg = new PyramidGenerator();
             var pyramid = pg.GetNewPyramid("1\n8 9\n1 5 9\n4 5 2 3");
             var maxSum = pyramid.GetMaxSum();
@@ -48,7 +44,6 @@ namespace Pyramid.Test
         [Fact]
         public void GIVEN_EvenValueInRoot_WHEN_GetMaxSum_THEN_GiveMaxSum()
         {
-            // input: 0\n8 9\n2 5 9\n4 5 2 3
             var pg = new PyramidGenerator();
             var pyramid = pg.GetNewPyramid("0\n8 9\n2 4 9\n4 5 2 3");
             var maxSum = pyramid.GetMaxSum();
