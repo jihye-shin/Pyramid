@@ -26,7 +26,7 @@ namespace Pyramid
             }
             else
             {
-                maxSum = FindMaxSum_rec(value);
+                maxSum = FindMaxSumAndPath_rec(value);
                 return maxSum;
             }
         }
@@ -39,38 +39,44 @@ namespace Pyramid
             }
             else
             {
-                FindMaxSumAndPath_rec();
+                maxSum = FindMaxSumAndPath_rec(value);
                 return maxPath;
             }
         }
 
-        private void FindMaxSumAndPath_rec()
+        private int FindMaxSumAndPath_rec(int valueInParent)
         {
-            
-        }
-
-        private int FindMaxSum_rec(int valueInParent)
-        {
-            if (!hasChildren())
+            if (!HasChildren())
             {
+                this.maxPath = new List<int>() {this.value};
                 return valueInParent;
             }
             else
             {
                 var maxSumInChildren = Int32.MinValue;
+                var maxPathInChildren = new List<int>();
                 foreach (var child in this.children)
                 {
                     if (valueInParent % 2 != child.value % 2)
                     {
-                        maxSumInChildren = Math.Max(maxSumInChildren, child.FindMaxSum_rec(child.value));
+                        var currentChildMaxSum = child.FindMaxSumAndPath_rec(child.value);
+                        if (currentChildMaxSum > maxSumInChildren)
+                        {
+                            maxSumInChildren = currentChildMaxSum;
+                            maxPathInChildren = child.maxPath;
+                        }
+                        maxSumInChildren = Math.Max(maxSumInChildren, child.FindMaxSumAndPath_rec(child.value));
                     }
                 }
+
+                maxPathInChildren.Insert(0, this.value);
+                this.maxPath = maxPathInChildren;
 
                 return valueInParent + maxSumInChildren;
             }
         }
 
-        private bool hasChildren()
+        private bool HasChildren()
         {
             return this.children != null;
         }
