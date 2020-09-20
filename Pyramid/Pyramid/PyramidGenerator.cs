@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pyramid
 {
-    class PyramidGenerator
+    public class PyramidGenerator
     {
         // TODO: make test class for PyramidGenerator
 
