@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>Pyramid.PyramidGenerator</StartupObject>
+    <StartupObject>Pyramid.Program</StartupObject>
   </PropertyGroup>
 
 </Project>

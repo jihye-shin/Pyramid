@@ -11,7 +11,7 @@ namespace Pyramid
         static void Main(string[] args)
         {
             var p = new PyramidGenerator();
-            p.GetNewPyramid("0\n8 9\n2 5 9\n4 5 2 3");
+            p.GetNewPyramid("0\n8 9\n2 4 9\n4 5 2 3");
         }
         public Pyramid GetNewPyramid(string inputString)
         {
