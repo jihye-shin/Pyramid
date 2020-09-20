@@ -14,7 +14,12 @@ namespace Pyramid
             this.value = value;
             this.children = null;
         }
-        public int FindMaxSum()
+        public int GetMaxSum()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Pyramid GetMaxPath()
         {
             throw new NotImplementedException();
         }
