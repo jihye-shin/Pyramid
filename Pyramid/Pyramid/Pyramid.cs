@@ -66,7 +66,7 @@ namespace Pyramid
                             maxSumInChildren = currentChildMaxSum;
                             maxPathInChildren = child.maxPath;
                         }
-                        maxSumInChildren = Math.Max(maxSumInChildren, child.FindMaxSumAndPath_rec(child.value));
+                        // maxSumInChildren = Math.Max(maxSumInChildren, child.FindMaxSumAndPath_rec(child.value));
                     }
                 }
 
